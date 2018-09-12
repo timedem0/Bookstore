@@ -1,0 +1,32 @@
+
+.site {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: 'Muli', sans-serif;
+}
+
+h1 {
+	font-family: 'Nothing You Could Do', cursive;
+	font-weight: bold;
+	text-align: center;
+}
+
+.top {
+    margin-top: 7em;
+    padding-bottom: 5em;
+}
+
+.smaller-text {
+	font-size: .7em;
+}
+
+.big-holder {
+    padding: 3em;
+    background-color: lightblue;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: lightblue;
+}
