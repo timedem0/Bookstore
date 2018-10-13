@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Create new account</title>
+	<meta name="author" content="Tudor Nica">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/stylesheet.css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli%7CNothing+You+Could+Do" rel="stylesheet" />
+</head>
+<body class="text-center">
+	<div class="top">
+		<form class="form-signin rounded" th:object="${signupform}" th:action="@{/saveuser}" action="#" method="post">
+			<img class="mb-4" src="../img/book-200.png">
+	    	<h1>New Account</h1>
+	    	<br />
+			<input type="text" class="form-control" th:field="*{username}" placeholder="Username" required autofocus />
+			<div class="smaller-text form-error" role="alert" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">
+	        	Username Error
+	    	</div>
+			<br />
+			<input type="password" class="form-control" th:field="*{password}" placeholder="Password" required />
+			<div class="smaller-text form-error" role="alert" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+	        	Password Error
+	    	</div>
+			<br />
+			<input type="password" class="form-control" th:field="*{passwordCheck}" placeholder="Re-type password" required />
+			<div class="smaller-text form-error" role="alert" th:if="${#fields.hasErrors('passwordCheck')}" th:errors="*{passwordCheck}">
+	        	Password Match Error
+	    	</div>
+			<hr />
+			<button type="submit" class="btn btn-success btn-block">Create New Account</button>	
+			<br />
+			<a href="/index" class="btn btn-secondary btn-block">Go Back</a>
+		</form>
+	</div>
+</body>
+</html>
