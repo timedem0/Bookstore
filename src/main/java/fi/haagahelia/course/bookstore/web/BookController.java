@@ -68,13 +68,13 @@ public class BookController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(Book book) {
         book_repository.save(book);
-        return "redirect:index";
+        return "redirect:booklist";
     }
     
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteBook(@PathVariable("id") Long bookId, Model model) {
     	book_repository.deleteById(bookId);
-        return "redirect:../index";
+        return "redirect:../booklist";
     }
     
     // User control
